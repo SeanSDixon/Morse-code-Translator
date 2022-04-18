@@ -5,14 +5,17 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.', 'F':'.
                     '8':'---..', '9':'----.', '0':'-----',
                     ', ':'--..--', '.':'.-.-.-', '?':'..--..', '/':'-..-.', '-':'-....-', '(':'-.--.', ')':'-.--.-'}
 
-chars = []
 translation = []
 sentence = input("What would you like to encode?").upper()
 sentence = list(sentence)
-for char in sentence:
-    if char == " ":
-        pass
-    else:
-        translation.append(MORSE_CODE_DICT[char])
-print(' '.join(translation))
+try:
+    for char in sentence:
+        if char == " ":
+            pass
+        else:
+            translation.append(MORSE_CODE_DICT[char])
+    print(f"Here is your message: {' '.join(translation)}")
+
+except KeyError:
+    print("Sorry, Morsecode does not use one of your characters. Try again :)")
 
