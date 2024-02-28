@@ -18,8 +18,9 @@ try:
             translation.append(MORSE_CODE_DICT[char])
 
     final_message = ' '.join(translation)
-    subprocess.run("pbcopy", text=True, input=final_message)            
-    print(f"Here is your message: {final_message}")
+    subprocess.run("pbcopy", text=True, input=final_message)
+    print(f"\nHere is your message: {final_message}")
+    print('\nWe have copied the message to your clipboard!')
 
 except KeyError:
     print("Sorry, Morsecode does not use one of your characters. Try again :)")
